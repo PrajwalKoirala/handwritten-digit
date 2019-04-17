@@ -16,10 +16,10 @@ fprintf('Loading  Data ...\n')
 % X = csvread('features.csv');
 % y = csvread('labels.csv');
 
-% data1 = csvread('mnist1.csv');
-% data2 = csvread('mnist2.csv');
-% data = [data1; data2];
-data = csvread('mnist.csv');
+data1 = csvread('mnist1.csv');
+data2 = csvread('mnist2.csv');
+data = [data1; data2];
+% data = csvread('mnist.csv');
 X = data(:, 2:785);
 X = X/255;
 yy = data(:, 1);
@@ -104,7 +104,7 @@ bih = Theta1(:,1);
 who = Theta2(:,2:201);
 bho = Theta2(:,1);
 
-csvwrite('who.csv', who);
-csvwrite('wih.csv', wih);
-csvwrite('bho.csv', bho);
-csvwrite('bih.csv', bih);
+csvwrite('who.csv', who); %hidden to output weight
+csvwrite('wih.csv', wih); %input to hidden weight
+csvwrite('bho.csv', bho); %hidden to output bias
+csvwrite('bih.csv', bih); %input to hidden bias
